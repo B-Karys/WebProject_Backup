@@ -1,0 +1,26 @@
+body
+{
+background: -webkit-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: -moz-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+}
+.card
+{
+    margin: 10px 30px;
+}
+#MyCardImage1
+{
+    background-image: url(./img/csgo.jpg);
+    height: 300px;
+    width: 300px;
+    
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
