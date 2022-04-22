@@ -73,3 +73,28 @@ z-index: 2;
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  #MyCardImage1
+{
+    background-image: url(https://2.downloader.disk.yandex.kz/preview/498e4bbf64324fbfee00f8ab7a1385703e9fcb25d633acda44395efa5a4cc6fa/inf/6akjOQ7iSU7kIJlA54fh-NdyNhT3ZJ2fJvKvhCSwmcXUKrYPYTBDLHMS2wa-XSty4T634zGYongzPlhYcj1hZw%3D%3D?uid=1016033090&filename=team1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1016033090&tknv=v2&size=1898x923);
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+}
+#MyCardImage2
+{
+    background-image: url(https://4.downloader.disk.yandex.kz/preview/6fcd70273329112ce446e9b29b2ffaf84b0c1e564b0fef150d4207508776eaf8/inf/OfI1Y7fq5uJjivkHbXqso5JzznKPsjm_j2l8ehV4jyQjA-0edgSHOLlW3hhNgCGjfVqN2nbGcxsxlSMLNwN3Pg%3D%3D?uid=1016033090&filename=QYWuh6PY_400x400.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1016033090&tknv=v2&size=1898x923);
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+}
+#MyCardImage3
+{
+    background-image: url(https://2.downloader.disk.yandex.kz/preview/6ab250a48bace95d075733a7180b235712834a37e768432599bd934eb577290c/inf/V2cNF-BRV-nRKNZgb0nOjA-w9wAg9FD5x3AZM_nH1-hjriG3Fr82p7yfVmsu87_VhzCPAlmjya6nfnckkUSV-Q%3D%3D?uid=1016033090&filename=yKtAYtyZ_400x400.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1016033090&tknv=v2&size=1898x923);
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+}
