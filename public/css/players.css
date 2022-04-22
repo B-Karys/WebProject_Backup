@@ -24,10 +24,11 @@ z-index: 2;
 }
 #MyCardImage1
 {
-    background-image: url(./img/csgo.jpg);
+    background-image: url(https://3.downloader.disk.yandex.kz/preview/8ac74739487754bd9a853c6aefa9d0d89fa97488e4bb2c14fbac57ea8ba2dcc0/inf/hq8uRwsH-kHqxDT9hyXOwexoUF81cFWJO0E5Y3_U4NDB5krk9Oi_y1udpyslvp2FuQCI2KICNeGRO8e1Jbj-8A%3D%3D?uid=1016033090&filename=php.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1016033090&tknv=v2&size=1898x923);
     height: 300px;
     width: 300px;
-    
+    background-position: center;
+    background-size: cover;
 }
 .footer {
     position: fixed;
