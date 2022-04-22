@@ -1,0 +1,75 @@
+body
+{
+background: -webkit-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: -moz-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+font-family: "Lato", sans-serif;
+
+}
+.row
+{
+    margin-left: 10%;
+}
+.card
+{
+    margin: 10px 30px;
+}
+.navbar
+{
+background: -webkit-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: -moz-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+background: linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+position: relative;
+z-index: 2;
+}
+#MyCardImage1
+{
+    background-image: url(./img/csgo.jpg);
+    height: 300px;
+    width: 300px;
+    
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    z-index: 2;
+ }
+  .sidenav {
+    color: aqua;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(158, 63, 202);
+    overflow-x: hidden;
+    padding-top: 10%;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
