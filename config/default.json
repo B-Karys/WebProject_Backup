@@ -1,9 +1,0 @@
-{
-  "Kelphy": {
-    "dbConfig": {
-      "host": "localhost",
-      "port": 5984,
-      "dbName": "mongodb+srv://Kelphy:3G4aik3LGqtFlbTt@cluster0.fgxn8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    }
-  }
-}

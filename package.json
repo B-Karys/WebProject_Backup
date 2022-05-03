@@ -1,30 +1,17 @@
 {
-  "name": "server.js",
+  "name": "cv",
   "version": "1.0.0",
+  "description": "",
   "main": "routes/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Kelphy",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
-    "body-parser": "^1.20.0",
-    "config": "^3.3.7",
     "ejs": "^3.1.6",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.2",
-    "nodemon": "^2.0.16"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kerupie/WebProject_Backup.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Kerupie/WebProject_Backup/issues"
-  },
-  "homepage": "https://github.com/Kerupie/WebProject_Backup#readme",
-  "description": "myserver"
+    "express": "^4.17.3"
+  }
 }
