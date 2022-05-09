@@ -18,4 +18,6 @@ var schema = new mongoose.Schema({
 
 var user = new mongoose.model('User', schema);
 
+
+//status   searches for team  role   rank//
 module.exports = user;

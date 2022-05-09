@@ -1,11 +1,11 @@
 const express = require('express')
-const UserController = require('../controllers/User')
+const ProfileController = require('../controllers/profile')
 const router = express.Router();
 
-router.get('/', UserController.findAll);
-router.get('/:id', UserController.findOne);
-router.post('/', UserController.create);
-router.patch('/:id', UserController.update);
-router.delete('/:id', UserController.destroy);
+router.get('/', ProfileController.findAll);
+router.get('/:id', ProfileController.findOne);
+router.post('/', ProfileController.create);
+router.patch('/:id', ProfileController.update);
+router.delete('/:id', ProfileController.destroy);
 
 module.exports = router

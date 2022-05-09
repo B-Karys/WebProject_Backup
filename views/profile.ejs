@@ -45,22 +45,25 @@
   <div class="card col-3 acc">
     <div id="profilepicture"></div>
       <div class="card-body">
-        <h5 class="card-title">Kelphy (nickname)</h5>
+        <h5 class="card-title">Kelphy(nickname)</h5>
         <a href="#" class="btn btn-primary">+ add friend</a>
       </div>
     </div>
 
     <div class="acc">
-        <h1>status: online</h1>
-        <h1>searches for team</h1>
-        <h1>rank: Master Guardian 2</h1>
-        <h1>Role:sniper/openfrager</h1>
+        <form action="/user" method="post">
+            <label for="role">Role:</label><br>
+            <input type="text" id="role" name="role" value="John"><br>
+            <label for="rank">Rank:</label><br>
+            <input type="text" id="rank" name="rank" value="Johnson"><br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
   
   <br><br><br><br><br><br><br><br><br><br>
   <div class="footer">
     <p>Footer</p>
   </div>
-  </html> 
 
 </body>
+</html>

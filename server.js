@@ -1,9 +1,8 @@
 //IMPORTING//
-const express = require('express'),
-    router = express.Router()
+const express = require('express');
 const app = express();
 const path = require('path');
-const port = 3002;
+const port = process.env.PORT || 3002;
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
@@ -14,16 +13,15 @@ app.use(bodyParser.json())
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
-}).then(() => {
-    console.log("Databse Connected Successfully!!");
+mongoose.connect(dbConfig.url).then(() => {
+    console.log("Database Connected Successfully!!");
 }).catch(err => {
     console.log('Could not connect to the database', err);
-    process.exit();
 });
+
 //USER//
 const UserRoute = require('./routes/User.js')
+const router = require("./routes");
 app.use('/user',UserRoute)
 
 //VIEWS//
