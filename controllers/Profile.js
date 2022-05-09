@@ -20,7 +20,9 @@ exports.create = async (req, res) => {
             message: err.message || "Some error occurred while creating user"
         });
     });
-};// Retrieve all users from the database.
+};
+
+// Retrieve all users from the database.
 exports.findAll = async (req, res) => {
     try {
         const user = await ProfileModel.find();
@@ -28,7 +30,25 @@ exports.findAll = async (req, res) => {
     } catch(error) {
         res.status(404).json({message: error.message});
     }
-};// Find a single User with an id
+};
+//Find By Role
+    exports.findByRole = async (req, res) => {
+        try {
+            const user = await ProfileModel.find(req.params.role);
+            res.status(200).json(user);
+        } catch (error) {
+            res.status(404).json({message: error.message});
+        }
+};
+    exports.findByRank = async (req, res) => {
+        try {
+            const user = await ProfileModel.find(req.params.rank);
+            res.status(200).json(user);
+        } catch (error) {
+            res.status(404).json({message: error.message});
+        }
+    };
+    // Find a single User with an id
 exports.findOne = async (req, res) => {
     try {
         const user = await ProfileModel.findById(req.params.id);
@@ -36,7 +56,8 @@ exports.findOne = async (req, res) => {
     } catch(error) {
         res.status(404).json({ message: error.message});
     }
-};// Update a user by the id in the request
+};
+// Update a user by the id in the request
 exports.update = async (req, res) => {
     if(!req.body) {
         res.status(400).send({
@@ -59,7 +80,8 @@ exports.update = async (req, res) => {
             message: err.message
         });
     });
-};// Delete a user with the specified id in the request
+};
+// Delete a user with the specified id in the request
 exports.destroy = async (req, res) => {
     await ProfileModel.findByIdAndRemove(req.params.id).then(data => {
         if (!data) {
