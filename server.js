@@ -29,7 +29,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
-router.get('', (req, res) => {
+express.Router.get('', (req, res) => {
     res.render('', {text: "About the page"})
 })
 
