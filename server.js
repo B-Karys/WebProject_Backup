@@ -6,7 +6,7 @@ const port = process.env.PORT || 3002;
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
-
+const router = express.Router();
 //DataBase//
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
