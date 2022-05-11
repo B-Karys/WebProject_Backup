@@ -1,7 +1,6 @@
 let mongoose = require('mongoose');
 let schema = new mongoose.Schema({
 
-
     role: {
         type: String,
         default: ''
@@ -12,6 +11,8 @@ let schema = new mongoose.Schema({
     },
 });
 
-let profileModel = new mongoose.model('Profile', schema);
+let user = new mongoose.model('Profile', schema);
+
+
 //status searches for team || role   rank//
-module.exports = profileModel;
+module.exports = user;

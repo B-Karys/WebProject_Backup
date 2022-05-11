@@ -22,7 +22,8 @@ mongoose.connect(dbConfig.url).then(() => {
 //USER//
 const UserRoute = require('./routes/user.js')
 app.use('/user',UserRoute)
-
+const ProfileRoute = require('./routes/profile.js')
+app.use('/user',ProfileRoute)
 //VIEWS//
 app.set('views', './views')
 app.set('view engine', 'ejs')
