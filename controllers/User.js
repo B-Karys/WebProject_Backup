@@ -11,13 +11,6 @@ exports.create = async (req, res) => {
     });
 
     await user.save().then(data => {
-        res.send({
-            message:"User created successfully!!",
-            user:data
+        res.redirect("http://localhost:3002/profile")
         });
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Some error occurred while creating user"
-        });
-    });
 };
