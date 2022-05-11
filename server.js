@@ -6,6 +6,7 @@ const port = process.env.PORT || 3002;
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+const router = require("./routes");
 //DataBase//
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -19,8 +20,7 @@ mongoose.connect(dbConfig.url).then(() => {
 });
 
 //USER//
-const UserRoute = require('./routes/User.js')
-const router = require("./routes");
+const UserRoute = require('./routes/user.js')
 app.use('/user',UserRoute)
 
 //VIEWS//
