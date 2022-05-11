@@ -1,15 +1,27 @@
 const ProfileModel = require('../model/profile')
 
 exports.create = async (req, res) => {
-    if (!req.body.rank && !req.body.role) {
-        res.status(400).send({message: "Content can not be empty!"});
+    if (!req.body.email && !req.body.nickname && !req.body.password) {
+        res.status(400).send({ message: "Content can not be empty!" });
     }
 
-    const user = new ProfileModel({
-        rank: req.body.rank,
-        role: req.body.role,
+    const user = new UserModel({
+        email: req.body.email,
+        nickname: req.body.nickname,
+        password: req.body.password,
     });
-}
+
+    await user.save().then(data => {
+        res.send({
+            message:"User created successfully!!",
+            user:data
+        });
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while creating user"
+        });
+    });
+};
 
 exports.findByRole = async (req, res) => {
     try {
