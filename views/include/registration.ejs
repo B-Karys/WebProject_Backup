@@ -1,0 +1,36 @@
+<!-- Кнопка для открытия модального -->
+<button onclick="document.getElementById('id01').style.display='block'">Регистрация</button>
+
+<!-- Модальный (содержит форму регистрации) -->
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Закрыть модальный">X</span>
+    <form class="modal-content" action="/action_page.php">
+        <div class="container">
+            <h1>Форма регистрации</h1>
+            <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Введите вашу почту" name="email" required >
+
+            <label for="nickname"><b>Nickname</b></label>
+            <input type="text" placeholder="Введите вашу почту" name="nickname" required >
+
+            <label for="psw"><b>Пароль</b></label>
+            <input type="password" placeholder="Введите пароль" name="psw" required >
+
+            <label for="psw-repeat"><b>Повторить пароль</b></label>
+            <input type="password" placeholder="Повторите пароль" name="psw-repeat" required >
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
+            </label>
+
+            <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и конфиденциальность</a>.</p>
+
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отменить</button>
+                <button type="submit" class="signup">Регистрация</button>
+            </div>
+        </div>
+    </form>
+</div>
