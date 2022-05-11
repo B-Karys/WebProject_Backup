@@ -11,6 +11,6 @@ exports.create = async (req, res) => {
     });
 
     await user.save().then(data => {
-        res.redirect("http://localhost:3002/profile")
+        res.redirect("/profile")
         });
 };
