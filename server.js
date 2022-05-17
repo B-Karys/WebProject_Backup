@@ -6,11 +6,12 @@ const port = process.env.PORT || 3002;
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override')
 const router = require("./routes");
 //DataBase//
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
+app.use(methodOverride('_method'))
 mongoose.Promise = global.Promise;
 
 mongoose.connect(dbConfig.url).then(() => {
