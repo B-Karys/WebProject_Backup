@@ -13,6 +13,14 @@ let schema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    role: {
+        type: String,
+        default: ''
+    },
+    rank: {
+        type: String,
+        default: ''
+    },
 });
 
 let user = new mongoose.model('User', schema);
