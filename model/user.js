@@ -23,6 +23,7 @@ let schema = new mongoose.Schema({
     },
 });
 
+
 let user = new mongoose.model('User', schema);
 
 module.exports = user;
