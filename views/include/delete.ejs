@@ -1,0 +1,27 @@
+<!-- Кнопка для открытия модального -->
+<button onclick="document.getElementById('id01').style.display='block'">Удаление</button>
+
+<!-- Модальный (содержит форму регистрации) -->
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Закрыть модальный">X</span>
+    <form action="user/nickname?_method=DELETE" class="needs-validation" novalidate method="post" data-rel="back">
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="nickname" class="form-label">Nickname</label>
+                <input type="text" class="form-control" name="nickname" id="nickname" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                    Valid nickname is required.
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" name="password" id="password" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                    Valid password is required.
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Delete</button>
+    </form>
+</div>

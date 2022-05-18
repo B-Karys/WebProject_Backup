@@ -22,7 +22,7 @@
   <div class="card col-3 acc">
     <div id="profilepicture"></div>
       <div class="card-body">
-          <form action="/user/nickname?_method=PATCH" class="needs-validation" novalidate method="post">
+          <form action="/user/nickname?_method=PATCH" class="needs-validation" novalidate method="post" data-rel="back">
               <div class="row g-3">
                   <div class="col-sm-6">
                       <label for="nickname">Nickname</label>
@@ -38,6 +38,7 @@
     </div>
   </div>
 
+<%-include("include/delete.ejs")%>
 
 <!--    <div class="acc">-->
 <!--        <form action="/profile" method="post">-->

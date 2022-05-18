@@ -17,6 +17,7 @@ exports.create = async (req, res) => {
         });
 };
 
+//UPDATE//
 exports.update = async (req, res) => {
 
     if (!req.body.nickname || !req.body.role || !req.body.rank) {
@@ -38,11 +39,34 @@ exports.update = async (req, res) => {
             //res.status(404).send({message: `User not found.`});
             res.status(404).render('profile', {mydata: `User not found.`})
         }else{
-            //res.send({ message: "User updated successfully." })
+            // //res.send({ message: "User updated successfully." })
             res.status(200).render('profile', {mydata: "User updated successfully."})
         }
     }).catch(err => {
         //res.status(500).send({message: err.message});
+        res.status(500).render('profile', {mydata: err.message})
+    });
+};
+
+//DELETE//
+exports.destroy = async (req, res) => {
+
+    //await UserModel.findByIdAndRemove(req.params.id).then(data => {
+    let userNickname=req.body.nickname
+    let userPassword=req.body.password
+    await UserModel.deleteOne({nickname: userNickname, password: userPassword}).then(data => {
+        //await UserModel.findByIdAndRemove(req.query.id).then(data => {
+        //console.log(data)
+        if (data.deletedCount===0) {
+            //res.status(404).send({ message: `User not found.`});
+            res.status(404).render('profile', {mydata: "User not found"})
+
+        } else {
+            //res.send({message: "User deleted successfully!"});
+            res.status(200).render('profile', {mydata: "user "+ userNickname +" deleted succesfully!"})
+        }
+    }).catch(err => {
+        //res.status(500).send({ message: err.message });
         res.status(500).render('profile', {mydata: err.message})
     });
 };
