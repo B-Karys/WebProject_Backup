@@ -1,4 +1,5 @@
 const UserModel = require('../model/user')// Create and Save a new user
+//CREATE//
 exports.create = async (req, res) => {
     if (!req.body.email && !req.body.nickname && !req.body.password) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -16,6 +17,20 @@ exports.create = async (req, res) => {
         res.redirect("/profile")
         });
 };
+
+//FIND ALL//
+exports.findAll = async (req, res) => {
+    try {
+        const user = await UserModel.find();
+        //res.status(200).json(user);
+        res.status(200).render('players', {mydata: user})
+    } catch(error) {
+        res.status(404).render('players', {mydata: error.message})
+        //res.status(404).json({message: error.message});
+    }
+};
+
+
 
 //UPDATE//
 exports.update = async (req, res) => {
