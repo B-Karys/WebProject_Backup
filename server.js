@@ -10,6 +10,8 @@ const methodOverride = require('method-override');
 const router = require("./routes");
 const swaggerUi = require("swagger-ui-express");
 swaggerDocument = require('./swagger.json');
+
+
 //DataBase//
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -27,8 +29,8 @@ mongoose.connect(dbConfig.url).then(() => {
 //USER//
 const UserRoute = require('./routes/user.js')
 app.use('/user',UserRoute)
-const ProfileRoute = require('./routes/profile.js')
-app.use('/user',ProfileRoute)
+const TeamRoute = require('./routes/teams.js')
+app.use('/team',TeamRoute)
 //VIEWS//
 app.set('views', './views')
 app.set('view engine', 'ejs')
