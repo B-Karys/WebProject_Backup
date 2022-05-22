@@ -1,4 +1,5 @@
 const UserModel = require('../model/user')// Create and Save a new user
+
 //CREATE//
 exports.create = async (req, res) => {
     if (!req.body.email && !req.body.nickname && !req.body.password) {

@@ -30,7 +30,7 @@ mongoose.connect(dbConfig.url).then(() => {
 const UserRoute = require('./routes/user.js')
 app.use('/user',UserRoute)
 const TeamRoute = require('./routes/teams.js')
-app.use('/team',TeamRoute)
+app.use('/teams',TeamRoute)
 //VIEWS//
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -40,14 +40,14 @@ app.use(express.static(__dirname + '/public'))
 
 //ROOTS//
 app.use('/', require("./routes/index"));
-app.use('/', require("./routes/players"));
-app.use('/', require("./routes/teams"));
-app.use('/', require("./routes/profile"));
-app.use('/', require("./routes/news"));
+app.use('/players', require("./routes/players"));
+app.use('/teams', require("./routes/teams"));
+app.use('/profile', require("./routes/profile"));
+app.use('/news', require("./routes/news"));
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //CONSOLE LISTEN//
 app.listen(port, () =>
-    console.log(`App listening at http://localhost:${port}`+`/index`)
+    console.log(`App listening at http://localhost:${port}`)
 );
