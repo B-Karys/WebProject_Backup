@@ -3,7 +3,7 @@ const teamController = require("../controllers/Team");
 const router = express.Router();
 
 router.get('/', teamController.team);
-router.get('/', teamController.findAll);
+router.get('/all', teamController.findAll);
 router.post('/', teamController.create);
 router.patch('/', teamController.addPlayer);
 

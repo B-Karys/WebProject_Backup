@@ -13,7 +13,7 @@ exports.create = async (req, res) => {
         name: req.body.name,
         players: req.body.players,
     });
-
+    console.log(teams)
     await teams.save();
 };
 
@@ -27,14 +27,13 @@ exports.findAll = async (req, res) => {
         res.status(404).render('teams', {mydata: error.message})
         //res.status(404).json({message: error.message});
     }
+
 };
 
 exports.addPlayer = async (req,res) => {
     try {
         const newPlayer = TeamsModel.findOne({}).populate('user').exec((err, req.body.nickname));
-        $push: {
-           players: newPlayer;
-        }
+
     } catch (error) {
         res.status(404).render('teams', {mydata: error.message})
     }
