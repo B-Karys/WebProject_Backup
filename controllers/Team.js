@@ -29,14 +29,14 @@ exports.findAll = async (req, res) => {
     }
 
 };
-
-exports.addPlayer = async (req,res) => {
-    try {
-        const newPlayer = TeamsModel.findOne({}).populate('user').exec((err, req.body.nickname));
-
-    } catch (error) {
-        res.status(404).render('teams', {mydata: error.message})
-    }
-};
+//
+// exports.addPlayer = async (req,res) => {
+//     TeamsModel.findOne({name: req.body.name}).
+//         populate('nickname').
+//         exec(function (err, Team) {
+//             if(err) return err;
+//             newTeam.players.push(req.body.nickname);
+//     })
+// };
 
 
