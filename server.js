@@ -44,6 +44,8 @@ app.use('/players', require("./routes/players"));
 app.use('/teams', require("./routes/teams"));
 app.use('/profile', require("./routes/profile"));
 app.use('/news', require("./routes/news"));
+app.use('/auth', require("./routes/auth"));
+
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
