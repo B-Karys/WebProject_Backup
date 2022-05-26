@@ -50,3 +50,12 @@ exports.login = async (req, res) => {
 
     res.json({status:'error', error:"Invalid email/password"})
 }
+
+exports.logout = (req, res) => {
+    res.clearCookie("token")
+    return res.json({
+        message: "User sign out successful"
+
+    })
+    return res.redirect('/');
+}
