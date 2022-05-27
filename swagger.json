@@ -10,14 +10,96 @@
     }
   },
   "host": "localhost:3002",
-  "basePath": "/index",
+  "basePath": "/",
   "tags": [
     {
-      "name": "Users",
+      "name": "user",
       "description": "API for users in the system"
+    },
+    {
+      "name": "Teams",
+      "description": "API for teams in the system"
     }
   ],
-  "schemes": ["http"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"]
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get all users",
+        "operationId": "findAll",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/user/id{id}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get one user",
+        "operationId": "findOne",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/user/": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create one user",
+        "operationId": "create",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to return",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    }
+
+  }
 }

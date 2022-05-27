@@ -7,6 +7,7 @@ exports.create = async (req, res) => {
     }
 
     const user = new UserModel({
+        _id: String,
         email: req.body.email,
         nickname: req.body.nickname,
         password: req.body.password,
@@ -21,8 +22,9 @@ exports.create = async (req, res) => {
 
 
 exports.findOne = async (req, res) => {
+
     try {
-        const user = await UserModel.findById(req.params.id);
+        const user = await UserModel.findById({_id:req.params.id}).exec();
         res.status(200).json(user);
     } catch(error) {
         res.status(404).json({ message: error.message});
@@ -32,12 +34,12 @@ exports.findOne = async (req, res) => {
 //FIND ALL//
 exports.findAll = async (req, res) => {
     try {
-        const user = await UserModel.find();
-        //res.status(200).json(user);
-        res.status(200).render('players', {mydata: user})
+        const users = await UserModel.find();
+        res.status(200).json(users);
+        // res.status(200).render('players', {mydata: user})
     } catch(error) {
-        res.status(404).render('players', {mydata: error.message})
-        //res.status(404).json({message: error.message});
+        // res.status(404).render('players', {mydata: error.message})
+        res.status(404).json({message: error.message});
     }
 };
 
@@ -88,11 +90,11 @@ exports.destroy = async (req, res) => {
             res.status(404).render('profile', {mydata: "User not found"})
 
         } else {
-            //res.send({message: "User deleted successfully!"});
-            res.status(200).render('profile', {mydata: "user "+ userNickname +" deleted succesfully!"})
+            res.send({message: "User deleted successfully!"});
+            // res.status(200).render('profile', {mydata: "user "+ userNickname +" deleted succesfully!"})
         }
     }).catch(err => {
-        //res.status(500).send({ message: err.message });
-        res.status(500).render('profile', {mydata: err.message})
+        res.status(500).send({ message: err.message });
+        // res.status(500).render('profile', {mydata: err.message})
     });
 };

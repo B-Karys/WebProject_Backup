@@ -23,7 +23,7 @@ module.exports.register = async function (req, res){
             nickname: req.body.nickname,
             rank: req.body.rank,
             role: req.body.role,
-            password: bcrypt.hashSync(password, salt)
+            password: req.body.password || bcrypt.hashSync(password, salt),
         });
         user.save();
         res.redirect('/');
