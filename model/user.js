@@ -7,11 +7,15 @@ let schema = new mongoose.Schema({
     },
     nickname: {
         type: String,
-        default: ''
+        unique: true,
+        required: true,
+
     },
     password: {
         type: String,
-        default: ''
+        default: '',
+        required: true,
+
     },
     role: {
         type: String,

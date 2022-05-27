@@ -7,7 +7,6 @@ exports.create = async (req, res) => {
     }
 
     const user = new UserModel({
-        _id: String,
         email: req.body.email,
         nickname: req.body.nickname,
         password: req.body.password,
@@ -64,15 +63,15 @@ exports.update = async (req, res) => {
     }).then(data => {
         console.log(data)
         if (!data) {
-            //res.status(404).send({message: `User not found.`});
-            res.status(404).render('profile', {mydata: `User not found.`})
+            res.status(404).send({message: `User not found.`});
+            // res.status(404).render('profile', {mydata: `User not found.`})
         }else{
-            // //res.send({ message: "User updated successfully." })
-            res.status(200).render('profile', {mydata: "User updated successfully."})
+            res.send({ message: "User updated successfully." })
+            // res.status(200).render('profile', {mydata: "User updated successfully."})
         }
     }).catch(err => {
-        //res.status(500).send({message: err.message});
-        res.status(500).render('profile', {mydata: err.message})
+        res.status(500).send({message: err.message});
+        // res.status(500).render('profile', {mydata: err.message})
     });
 };
 
@@ -86,8 +85,8 @@ exports.destroy = async (req, res) => {
         //await UserModel.findByIdAndRemove(req.query.id).then(data => {
         //console.log(data)
         if (data.deletedCount===0) {
-            //res.status(404).send({ message: `User not found.`});
-            res.status(404).render('profile', {mydata: "User not found"})
+            res.status(404).send({ message: `User not found.`});
+            // res.status(404).render('profile', {mydata: "User not found"})
 
         } else {
             res.send({message: "User deleted successfully!"});

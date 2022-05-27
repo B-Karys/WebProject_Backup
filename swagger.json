@@ -22,7 +22,7 @@
     }
   ],
   "paths": {
-    "/user": {
+    "/user/": {
       "get": {
         "tags": [
           "user"
@@ -71,35 +71,130 @@
         }
       }
     },
-    "/user/": {
+    "/user": {
       "post": {
         "tags": [
           "user"
         ],
         "summary": "Create one user",
         "operationId": "create",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "ID of user to return",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
             "schema": {
               "$ref": "#/definitions/User"
             }
           }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      }
+    },
+    "/user/:nickname": {
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update the role and rank of your user",
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to update",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "User is updated",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "delete one user",
+        "operationId": "destroy",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to delete",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json/ejs"
+        ],
+        "responses": {
+          "200": {
+            "description": "User is deleted",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "409": {
+            "description": "Database error"
+          }
         }
       }
     }
-
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "format": "objectId"
+        },
+        "nickname": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        }
+      }
+    }
   }
 }
