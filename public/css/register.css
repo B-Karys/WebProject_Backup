@@ -1,0 +1,38 @@
+body
+{
+    background: -webkit-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+    background: -moz-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+    background: linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+    font-family: "Lato", sans-serif;
+}
+.card
+{
+    display: flex;
+    margin: 10px 30px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+.navbar
+{
+    background: -webkit-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+    background: -moz-linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+    background: linear-gradient(225deg, rgb(195, 76, 251), rgb(79, 227, 232));
+}
+.child
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+#news
+{
+    margin-left: auto;
+    margin-right: auto;
+}
